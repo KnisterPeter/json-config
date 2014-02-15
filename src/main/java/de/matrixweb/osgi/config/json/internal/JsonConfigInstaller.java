@@ -84,7 +84,10 @@ public class JsonConfigInstaller implements BundleActivator, ArtifactInstaller {
    */
   @Override
   public void uninstall(final File artifact) throws Exception {
-    throw new UnsupportedOperationException();
+    final String pid[] = parsePid(artifact.getName());
+    final Configuration config = getConfiguration(toConfigKey(artifact),
+        pid[0], pid[1]);
+    config.delete();
   }
 
   private boolean setConfig(final File file) throws Exception {
