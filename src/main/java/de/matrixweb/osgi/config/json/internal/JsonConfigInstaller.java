@@ -220,8 +220,7 @@ public class JsonConfigInstaller implements BundleActivator, ArtifactInstaller {
 
         JsonConfigInstaller.this.configurationAdmin = ca;
         this.installer = this.context.registerService(
-            new String[] { ArtifactInstaller.class.getName(),
-                ConfigurationListener.class.getName() },
+            new String[] { ArtifactInstaller.class.getName() },
             JsonConfigInstaller.this, null);
       }
       return ca;
