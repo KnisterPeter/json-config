@@ -8,7 +8,7 @@
   </parent>
   <groupId>de.matrixweb.json-config</groupId>
   <artifactId>json-config</artifactId>
-  <version>0.0.2-SNAPSHOT</version>
+  <version>0.0.2</version>
   <packaging>bundle</packaging>
 
   <name>JSON Config</name>
