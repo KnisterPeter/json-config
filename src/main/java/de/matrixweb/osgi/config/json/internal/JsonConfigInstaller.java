@@ -101,7 +101,6 @@ public class JsonConfigInstaller implements BundleActivator, ArtifactInstaller {
     final Dictionary<String, Object> dict = convert(newProps);
     if (!props.equals(dict)) {
       dict.put(JSON_CONFIG_FILE, toConfigKey(file));
-      System.out.println(dict.toString());
       config.update(dict);
       return true;
     }
@@ -215,9 +214,6 @@ public class JsonConfigInstaller implements BundleActivator, ArtifactInstaller {
         final ServiceReference<ConfigurationAdmin> reference) {
       final ConfigurationAdmin ca = super.addingService(reference);
       if (JsonConfigInstaller.this.configurationAdmin == null) {
-        System.out
-            .println("JsonConfigInstaller.ConfigurationAdminTracker.addingService()");
-
         JsonConfigInstaller.this.configurationAdmin = ca;
         this.installer = this.context.registerService(
             new String[] { ArtifactInstaller.class.getName() },
